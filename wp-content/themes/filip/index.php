@@ -1,7 +1,7 @@
-<?php
-  $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
-?>
 <!DOCTYPE html>
+<?php
+$TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
+?>
 <html lang="<?php language_attributes(); ?>">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -29,7 +29,7 @@
     -->
     <?php get_header() ?>
 </head>
-    <body>
+    <body <?php body_class(); ?>>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
@@ -44,6 +44,7 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
+
     <?php get_footer() ?>
     <script src="/wp-content/themes/filip/static/js/bundle.js"></script><script src="/wp-content/themes/filip/static/js/1.chunk.js"></script><script src="/wp-content/themes/filip/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-utils/wpThemeClient.js'></script>

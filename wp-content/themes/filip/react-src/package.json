@@ -3,7 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@devloco\/react-scripts-wptheme": "2.1.1-wptheme-2.1.4",
+        "@devloco/react-scripts-wptheme": "2.1.1-wptheme-2.1.4",
+        "materialize-css": "^1.0.0-rc.2",
         "react": "^16.6.3",
         "react-dom": "^16.6.3"
     },
@@ -26,6 +27,10 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "homepage": "\/wp-content\/themes\/filip",
-    "browserLaunchTo": "http:\/\/filip1.com"
+    "homepage": "/wp-content/themes/filip",
+    "browserLaunchTo": "http://filip1.com",
+    "devDependencies": {
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.1.0"
+    }
 }
