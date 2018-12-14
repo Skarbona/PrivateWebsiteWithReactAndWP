@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/wp-content/themes/filip/static/css/main.32287314.chunk.css"
   },
   {
-    "revision": "c4a7b6cce2cb11ce6abd01a45968ae63",
+    "revision": "be61ccccee2fe9b4c440d1d4623dcbba",
     "url": "/wp-content/themes/filip/index.php"
   }
 ];

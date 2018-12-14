@@ -5,7 +5,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?php get_header() ?>
     <link rel="shortcut icon" href="/wp-content/themes/filip/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -28,6 +27,7 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
+    <?php get_header() ?>
 </head>
     <body>
     <noscript>
@@ -44,7 +44,7 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <?php get_footer()?>
+    <?php get_footer() ?>
     <script src="/wp-content/themes/filip/static/js/bundle.js"></script><script src="/wp-content/themes/filip/static/js/0.chunk.js"></script><script src="/wp-content/themes/filip/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-utils/wpThemeClient.js'></script>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-error-overlay/wpThemeErrorOverlay.js'></script>
