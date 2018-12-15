@@ -12,5 +12,7 @@ add_action( 'wp_enqueue_scripts', 'materialize_add_icons' );
 
 
 ///ADMIN
+include( get_stylesheet_directory() . '/includes/front/restapi/add_menu.php');
+add_action( 'rest_api_init', 'fs_register_nav_menu_in_restapi');
 
 ?>

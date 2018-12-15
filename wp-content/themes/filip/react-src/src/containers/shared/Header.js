@@ -1,5 +1,7 @@
 import React from 'react';
 import M from 'materialize-css'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Header extends React.Component {
 
@@ -12,33 +14,40 @@ class Header extends React.Component {
         const { sideNav } = this;
 
         const elems = sideNav.current;
-        const instances = M.Sidenav.init(elems);
+        M.Sidenav.init(elems);
 
     };
 
+    menuMapHandler = () => {
+        const { props: { menu } } = this;
+        if (!menu) return;
+
+        return menu.map((menuItem)=>{
+            return (
+                <li key={`menuID-${menuItem.ID}`}>
+                    <Link to={menuItem.url}>{menuItem.post_title}</Link>
+                </li>
+            );
+        })
+    };
+
     render() {
-        const { sideNav } = this;
+        const { sideNav, menuMapHandler } = this;
         return (
             <React.Fragment>
-                <nav>
-                    <div className="nav-wrapper">
-                        <a href="#!" className="brand-logo">Logo</a>
+                <nav className="light-blue darken-1">
+                    <div className="nav-wrapper container">
+                        <Link to="/" className="brand-logo">FilipS.okołowski</Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                             className="material-icons">menu</i></a>
                         <ul className="right hide-on-med-and-down">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">Javascript</a></li>
-                            <li><a href="mobile.html">Mobile</a></li>
+                            {menuMapHandler()}
                         </ul>
                     </div>
                 </nav>
 
                 <ul className="sidenav" id="mobile-demo" ref={sideNav}>
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                    {menuMapHandler()}
                 </ul>
 
             </React.Fragment>
@@ -46,4 +55,11 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = state => {
+    return {
+            menu : state.init.menu
+        }
+ };
+
+
+export default connect(mapStateToProps)(Header);
