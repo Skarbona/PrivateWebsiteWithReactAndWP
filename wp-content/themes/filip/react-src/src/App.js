@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchInitMenuData } from './actions/init'
+import { fetchInitMenuData, fetchInitHomeData } from './actions/init'
 
 import Header from './containers/shared/Header';
 import Home from './containers/Home/Home'
@@ -11,8 +11,9 @@ import HomeHero from './components/Home/HomeHero'
 class App extends React.Component {
 
   componentDidMount = () => {
-      const { props: { fetchInitMenuData } } = this;
+      const { props: { fetchInitMenuData, fetchInitHomeData } } = this;
       fetchInitMenuData();
+      fetchInitHomeData();
   };
 
   render() {
@@ -31,4 +32,7 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { fetchInitMenuData })(App);
+export default connect(null, {
+    fetchInitMenuData,
+    fetchInitHomeData
+})(App);

@@ -80,9 +80,12 @@ function (_React$Component) {
 
     _this.componentDidMount = function () {
       var _assertThisInitialize = Object(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)),
-          fetchInitMenuData = _assertThisInitialize.props.fetchInitMenuData;
+          _assertThisInitialize2 = _assertThisInitialize.props,
+          fetchInitMenuData = _assertThisInitialize2.fetchInitMenuData,
+          fetchInitHomeData = _assertThisInitialize2.fetchInitHomeData;
 
       fetchInitMenuData();
+      fetchInitHomeData();
     };
 
     return _this;
@@ -94,25 +97,25 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["BrowserRouter"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_containers_shared_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 23
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Switch"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
@@ -120,7 +123,7 @@ function (_React$Component) {
         component: _components_Home_HomeHero__WEBPACK_IMPORTED_MODULE_13__["default"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
@@ -129,14 +132,14 @@ function (_React$Component) {
         component: _containers_Home_Home__WEBPACK_IMPORTED_MODULE_12__["default"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Redirect"], {
         to: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         },
         __self: this
       }))));
@@ -147,7 +150,8 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(null, {
-  fetchInitMenuData: _actions_init__WEBPACK_IMPORTED_MODULE_10__["fetchInitMenuData"]
+  fetchInitMenuData: _actions_init__WEBPACK_IMPORTED_MODULE_10__["fetchInitMenuData"],
+  fetchInitHomeData: _actions_init__WEBPACK_IMPORTED_MODULE_10__["fetchInitHomeData"]
 })(App));
 
 /***/ }),
@@ -186,13 +190,15 @@ if(false) {}
 /*!******************************!*\
   !*** ./src/actions/index.js ***!
   \******************************/
-/*! exports provided: FETCH_INIT_MENU_DATA */
+/*! exports provided: FETCH_INIT_MENU_DATA, FETCH_INIT_HOME_DATA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_INIT_MENU_DATA", function() { return FETCH_INIT_MENU_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_INIT_HOME_DATA", function() { return FETCH_INIT_HOME_DATA; });
 var FETCH_INIT_MENU_DATA = 'FETCH_INIT_MENU_DATA';
+var FETCH_INIT_HOME_DATA = 'FETCH_INIT_HOME_DATA';
 
 /***/ }),
 
@@ -200,12 +206,13 @@ var FETCH_INIT_MENU_DATA = 'FETCH_INIT_MENU_DATA';
 /*!*****************************!*\
   !*** ./src/actions/init.js ***!
   \*****************************/
-/*! exports provided: fetchInitMenuData */
+/*! exports provided: fetchInitMenuData, fetchInitHomeData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchInitMenuData", function() { return fetchInitMenuData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchInitHomeData", function() { return fetchInitHomeData; });
 /* harmony import */ var C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -260,6 +267,50 @@ var fetchInitMenuData = function fetchInitMenuData() {
     }()
   );
 };
+var fetchInitHomeData = function fetchInitHomeData() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref2 = Object(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+        var menu;
+        return C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/wp-json/frontpage/page');
+
+              case 3:
+                menu = _context2.sent;
+                dispatch({
+                  type: _index__WEBPACK_IMPORTED_MODULE_3__["FETCH_INIT_HOME_DATA"],
+                  payload: menu.data
+                });
+                _context2.next = 10;
+                break;
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+                console.warn(_context2.t0);
+
+              case 10:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this, [[0, 7]]);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }()
+  );
+};
 
 /***/ }),
 
@@ -308,12 +359,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_html_parser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-html-parser */ "./node_modules/react-html-parser/lib/index.js");
+/* harmony import */ var react_html_parser__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_html_parser__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
 
 
 var _jsxFileName = "C:\\xampp\\htdocs\\klient-chiliit\\filip\\wp-content\\themes\\filip\\react-src\\src\\containers\\Home\\Home.js";
+
+
 
 
 var Home =
@@ -340,66 +396,37 @@ function (_React$Component) {
   Object(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
     key: "render",
     value: function render() {
+      var home = this.props.home;
+      if (!home) return null;
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "section no-pad-bot",
         id: "index-banner",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 13
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 14
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
-        className: "header center orange-text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: this
-      }, "Starter Template"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "row center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h5", {
-        className: "header col s12 light",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }, "A modern responsive front-end framework based on Material Design")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "row center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 16
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
-        href: "http://materializecss.com/getting-started.html",
-        id: "download-button",
-        className: "btn-large waves-effect waves-light orange",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }, "Get Started"))));
+      }, react_html_parser__WEBPACK_IMPORTED_MODULE_7___default()(home.content.rendered)));
     }
   }]);
 
   return Home;
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    home: state.init.home
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps)(Home));
 
 /***/ }),
 
@@ -519,7 +546,7 @@ function (_React$Component) {
         __self: this
       }, "FilipS.oko\u0142owski"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
         href: "#",
-        "data-target": "mobile-demo",
+        "data-target": "mobile-burger",
         className: "sidenav-trigger",
         __source: {
           fileName: _jsxFileName,
@@ -542,7 +569,7 @@ function (_React$Component) {
         __self: this
       }, menuMapHandler()))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", {
         className: "sidenav",
-        id: "mobile-demo",
+        id: "mobile-burger",
         ref: sideNav,
         __source: {
           fileName: _jsxFileName,
@@ -660,6 +687,11 @@ __webpack_require__.r(__webpack_exports__);
         menu: action.payload
       });
 
+    case _actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_INIT_HOME_DATA"]:
+      return Object(C_xampp_htdocs_klient_chiliit_filip_wp_content_themes_filip_react_src_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        home: action.payload
+      });
+
     default:
       return state;
   }
@@ -773,6 +805,17 @@ function unregister() {
 
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\klient-chiliit\filip\wp-content\themes\filip\react-src\src\index.js */"./src/index.js");
 
+
+/***/ }),
+
+/***/ 1:
+/*!*********************************!*\
+  !*** readable-stream (ignored) ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

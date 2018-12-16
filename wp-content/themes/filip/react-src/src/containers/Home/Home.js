@@ -1,26 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import ReactHtmlParser from 'react-html-parser';
 
 class Home extends React.Component {
 
     state = {};
 
     render() {
+        const { props: { home } } = this;
+        if(!home) return null;
         return (
             <div className="section no-pad-bot" id="index-banner">
                 <div className="container">
-                    <h1 className="header center orange-text">Starter Template</h1>
-                    <div className="row center">
-                        <h5 className="header col s12 light">A modern responsive front-end framework based on Material
-                            Design</h5>
-                    </div>
-                    <div className="row center">
-                        <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light orange">Get Started</a>
-                    </div>
-
+                    { ReactHtmlParser(home.content.rendered) }
                 </div>
             </div>
         );
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+            home : state.init.home
+        }
+ };
+
+
+export default connect(mapStateToProps)(Home);

@@ -38,7 +38,7 @@ class Header extends React.Component {
                 <nav className="light-blue darken-1">
                     <div className="nav-wrapper container">
                         <Link to="/" className="brand-logo">FilipS.okołowski</Link>
-                        <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        <a href="#" data-target="mobile-burger" className="sidenav-trigger"><i
                             className="material-icons">menu</i></a>
                         <ul className="right hide-on-med-and-down">
                             {menuMapHandler()}
@@ -46,7 +46,7 @@ class Header extends React.Component {
                     </div>
                 </nav>
 
-                <ul className="sidenav" id="mobile-demo" ref={sideNav}>
+                <ul className="sidenav" id="mobile-burger" ref={sideNav}>
                     {menuMapHandler()}
                 </ul>
 
