@@ -1,19 +1,7 @@
-var el = wp.element.createElement,
-    registerBlockType = wp.blocks.registerBlockType,
-    blockStyle = { backgroundColor: '#900', color: '#fff', padding: '20px' };
+import '../../../themes/filip/react-src/src/App.scss';
 
-registerBlockType( 'fs-blocks/hello-world', {
-    title: 'Hello World',
+import helloBlock from './blocks/Hello/';
+import heroBlock from './blocks/Hero/';
+import titleText from './blocks/Section/';
 
-    icon: 'universal-access-alt',
 
-    category: 'fs-blocks',
-
-    edit: function() {
-        return el( 'p', { style: blockStyle }, 'Hello editor.' );
-    },
-
-    save: function() {
-        return el( 'p', { style: blockStyle }, 'Hello saved content.' );
-    },
-} );

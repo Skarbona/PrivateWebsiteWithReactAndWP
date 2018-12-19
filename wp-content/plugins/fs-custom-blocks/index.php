@@ -17,10 +17,14 @@ function fs_custom_blocks() {
     wp_register_script(
         'fs_custom_blocks',
         plugins_url( 'blocks/dist/blocks.js', __FILE__ ),
-        array( 'wp-blocks', 'wp-element' )
+        array( 'wp-blocks', 'wp-element', 'wp-editor' )
     );
 
     register_block_type( 'fs-blocks/hello-world', array(
+        'editor_script' => 'fs_custom_blocks',
+    ) );
+
+    register_block_type( 'fs-blocks/hero', array(
         'editor_script' => 'fs_custom_blocks',
     ) );
 }
@@ -30,12 +34,10 @@ add_action( 'init', 'fs_custom_blocks' );
 add_filter( 'block_categories', function( $categories, $post ) {
     return array_merge(
         $categories,
-        array(
-            array(
-                'slug'  => 'fs-blocks',
-                'title' => 'FS Blocks',
-            ),
-        )
+       [[
+            'slug'  => 'fs-blocks',
+            'title' => 'FS Blocks',
+       ]]
     );
 }, 10, 2 );
 

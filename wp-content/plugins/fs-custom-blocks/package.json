@@ -4,21 +4,28 @@
   "description": "This is package for webpack config",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx webpack --watch",
+    "build": "npx webpack"
   },
   "author": "Filip Sokołowski",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
     "css-loader": "^2.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "babel-loader": "^8.0.4"
+    "@wordpress/components": "^7.0.4",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "react-particles-js": "^2.4.2"
   }
 }

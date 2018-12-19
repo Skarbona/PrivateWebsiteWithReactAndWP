@@ -2,18 +2,26 @@ import React from 'react';
 import './App.scss';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchInitMenuData, fetchInitHomeData } from './actions/init'
+import {
+    fetchInitMenuData,
+    fetchInitHomeData,
+    fetchInitHomeElementsData
+} from './actions/init'
 
 import Header from './containers/shared/Header';
-import Home from './containers/Home/Home'
-import HomeHero from './components/Home/HomeHero'
+import Home from './components/Home/Home'
 
 class App extends React.Component {
 
   componentDidMount = () => {
-      const { props: { fetchInitMenuData, fetchInitHomeData } } = this;
+      const { props: {
+          fetchInitMenuData,
+          fetchInitHomeData,
+          fetchInitHomeElementsData,
+      } } = this;
       fetchInitMenuData();
       fetchInitHomeData();
+      fetchInitHomeElementsData();
   };
 
   render() {
@@ -22,7 +30,6 @@ class App extends React.Component {
           <React.Fragment>
               <Header/>
                 <Switch>
-                    <Route path="/home" component={HomeHero} />
                     <Route exact path="/"  component={Home} />
                     <Redirect to="/" />
                 </Switch>
@@ -34,5 +41,6 @@ class App extends React.Component {
 
 export default connect(null, {
     fetchInitMenuData,
-    fetchInitHomeData
+    fetchInitHomeData,
+    fetchInitHomeElementsData
 })(App);
