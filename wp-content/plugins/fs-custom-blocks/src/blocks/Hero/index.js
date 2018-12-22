@@ -58,9 +58,13 @@ export default registerBlockType( 'fs-blocks/hero-block', {
             })
         }
 
+        function RemoveImage(){
+            setAttributes({ backgroundImage: null });
+        }
+
         return ([
             <InspectorControls>
-                <strong>Select a background image:</strong>
+                <h2>Select a background image:</h2>
                 <MediaUpload
                     onSelect={onImageSelect}
                     type="image"
@@ -71,7 +75,16 @@ export default registerBlockType( 'fs-blocks/hero-block', {
                         </button>
                     )}
                 />
-
+                { backgroundImage ? (
+                    <span className="badge red white-text"
+                          style={{cursor: 'pointer'}}
+                          onClick={RemoveImage}
+                    >
+                            Remove Image
+                        </span>
+                ) : ( '' )
+                }
+                <hr/>
                 <RichText
                     type="text"
                     className="content"
@@ -79,6 +92,7 @@ export default registerBlockType( 'fs-blocks/hero-block', {
                     value={buttonLink}
                     onChange={onChangeButtonLink}
                 /><br/>
+
             </InspectorControls>,
             <div style={{
                 backgroundImage: `url(${backgroundImage})`,

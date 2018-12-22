@@ -5,11 +5,15 @@ import { connect } from 'react-redux';
 import {
     fetchInitMenuData,
     fetchInitHomeData,
-    fetchInitHomeElementsData
+    fetchInitHomeElementsData,
+    fetchInitToolsAndTechData,
+    fetchInitPortfolioData,
+    fetchInitGalleryData,
 } from './actions/init'
 
 import Header from './containers/shared/Header';
 import Home from './components/Home/Home'
+import Bullitt from './components/Home/HomePosts/HomePosts'
 
 class App extends React.Component {
 
@@ -18,10 +22,16 @@ class App extends React.Component {
           fetchInitMenuData,
           fetchInitHomeData,
           fetchInitHomeElementsData,
+          fetchInitToolsAndTechData,
+          fetchInitPortfolioData,
+          fetchInitGalleryData,
       } } = this;
       fetchInitMenuData();
       fetchInitHomeData();
       fetchInitHomeElementsData();
+      fetchInitToolsAndTechData();
+      fetchInitPortfolioData();
+      fetchInitGalleryData();
   };
 
   render() {
@@ -31,6 +41,7 @@ class App extends React.Component {
               <Header/>
                 <Switch>
                     <Route exact path="/"  component={Home} />
+                    <Route exact path="/bullitt" component={Bullitt} />
                     <Redirect to="/" />
                 </Switch>
           </React.Fragment>
@@ -42,5 +53,8 @@ class App extends React.Component {
 export default connect(null, {
     fetchInitMenuData,
     fetchInitHomeData,
-    fetchInitHomeElementsData
+    fetchInitHomeElementsData,
+    fetchInitToolsAndTechData,
+    fetchInitPortfolioData,
+    fetchInitGalleryData
 })(App);

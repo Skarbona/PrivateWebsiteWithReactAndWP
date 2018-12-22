@@ -3,7 +3,7 @@
 function fs_add_custom_post_type_to_rest() {
     global $wp_post_types;
 
-    $post_type_names = ['home_posts'];
+    $post_type_names = ['home_posts','portfolio','gallery','tools_tech'];
 
     foreach($post_type_names as $post_type_name) {
 

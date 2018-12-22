@@ -3,6 +3,9 @@ import {
     FETCH_INIT_MENU_DATA,
     FETCH_INIT_HOME_DATA,
     FETCH_INIT_HOME_ELEMENTS_DATA,
+    FETCH_INIT_TOOLS_AND_TECH_DATA,
+    FETCH_INIT_PORTFOLIO_DATA,
+    FETCH_INIT_GALLERY_DATA,
 } from "./index";
 
 export const fetchInitMenuData = () => async dispatch => {
@@ -42,4 +45,40 @@ export const fetchInitHomeElementsData = () => async dispatch => {
         console.warn(e)
     }
 
+};
+
+export const fetchInitToolsAndTechData = () => async dispatch => {
+    try {
+        const toolsAndTech = await axios.get('/wp-json/wp/v2/tools_tech');
+        dispatch({
+            type: FETCH_INIT_TOOLS_AND_TECH_DATA,
+            payload: toolsAndTech.data
+        });
+    } catch(e) {
+        console.warn(e)
+    }
+};
+
+export const fetchInitPortfolioData = () => async dispatch => {
+    try {
+        const portfolio = await axios.get('/wp-json/wp/v2/portfolio');
+        dispatch({
+            type: FETCH_INIT_PORTFOLIO_DATA,
+            payload: portfolio.data
+        });
+    } catch(e) {
+        console.warn(e)
+    }
+};
+
+export const fetchInitGalleryData = () => async dispatch => {
+    try {
+        const gallery = await axios.get('/wp-json/wp/v2/gallery');
+        dispatch({
+            type: FETCH_INIT_GALLERY_DATA,
+            payload: gallery.data
+        });
+    } catch(e) {
+        console.warn(e)
+    }
 };

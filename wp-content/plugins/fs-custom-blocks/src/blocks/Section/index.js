@@ -1,11 +1,13 @@
 const { registerBlockType } = wp.blocks;
-
 const { RichText, InspectorControls, InnerBlocks, MediaUpload } = wp.editor;
+const { SVG, Path } = wp.components;
+
+const icon =  <SVG viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><Path d="M0,0h24v24H0V0z" fill="none" /><Path d="M3 17h18v-2H3v2zm0 3h18v-1H3v1zm0-7h18v-3H3v3zm0-9v4h18V4H3z" /></SVG>;
 
 export default registerBlockType( 'fs-blocks/custom-section', {
     title: 'Custom Section',
 
-    icon: 'calendar_view_day',
+    icon: icon,
 
     category: 'fs-blocks',
 
@@ -25,12 +27,20 @@ export default registerBlockType( 'fs-blocks/custom-section', {
         backgroundImage: {
             type: 'string',
             default: null,
+        },
+        classTitle: {
+            type: 'string',
+            default: null,
+        },
+        classDesc: {
+            type: 'string',
+            default: null,
         }
     },
 
     edit: ({ attributes, setAttributes }) => {
 
-        const {title, text, backgroundClass, backgroundImage} = attributes;
+        const {title, text, backgroundClass, backgroundImage, classTitle, classDesc } = attributes;
 
         const onChangeTitle = newTitle => {
             setAttributes({title: newTitle});
@@ -52,6 +62,15 @@ export default registerBlockType( 'fs-blocks/custom-section', {
 
         function RemoveImage(){
             setAttributes({ backgroundImage: null });
+        }
+
+        function onChangeClass(newClass, typeOfClass) {
+            if(typeOfClass === 'title') {
+                setAttributes({ classTitle: newClass });
+            }
+            if(typeOfClass === 'desc') {
+                setAttributes({ classDesc: newClass });
+            }
         }
 
             return ([
@@ -76,10 +95,7 @@ export default registerBlockType( 'fs-blocks/custom-section', {
                         </span>
                         ) : ( '' )
                     }
-
-                    <br/>
                     <hr/>
-                    <br/>
                     <h2>Add Custom classes to block:</h2>
                     <RichText
                         type="text"
@@ -87,6 +103,24 @@ export default registerBlockType( 'fs-blocks/custom-section', {
                         placeholder="Class Names"
                         value={backgroundClass}
                         onChange={onChangeBackgroundClass}
+                    />
+                    <hr/>
+                    <h3>Add Custom classes to title:</h3>
+                    <RichText
+                        type="text"
+                        className="content"
+                        placeholder="Class Title"
+                        value={classTitle}
+                        onChange={(classTitle) => onChangeClass(classTitle,'title')}
+                    />
+                    <hr/>
+                    <h3>Add Custom classes to description:</h3>
+                    <RichText
+                        type="text"
+                        className="content"
+                        placeholder="Class for Descriptions"
+                        value={classDesc}
+                        onChange={(classDesc) => onChangeClass(classDesc,'desc')}
                     />
                 </InspectorControls>,
                 <div className={`section section__home-element ${backgroundClass}`}
@@ -99,13 +133,13 @@ export default registerBlockType( 'fs-blocks/custom-section', {
                      }}
                 >
                     <RichText
-                        className="content"
+                        className={classTitle}
                         placeholder="Title"
                         value={title}
                         onChange={onChangeTitle}
                     /><br/>
                     <RichText
-                        className="content"
+                        className={classDesc}
                         placeholder="Text"
                         value={text}
                         onChange={onChangeText}
@@ -123,7 +157,9 @@ export default registerBlockType( 'fs-blocks/custom-section', {
             title,
             text,
             backgroundClass,
-            backgroundImage
+            backgroundImage,
+            classTitle,
+            classDesc
         } } = props;
 
         let bg = null;
@@ -132,8 +168,8 @@ export default registerBlockType( 'fs-blocks/custom-section', {
         return (
             <div className={`section section__home-element ${backgroundClass}`} style={bg} >
                 <div className="container">
-                    <h2>{title}</h2>
-                    <p>{text}</p>
+                    <h2 className={classTitle}>{title}</h2>
+                    <p className={classDesc}>{text}</p>
                     <InnerBlocks.Content />
                 </div>
             </div>

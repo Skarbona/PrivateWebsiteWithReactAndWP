@@ -6,13 +6,12 @@ import HomePost from './HomePosts/HomePosts';
 import HomeHero from './HomeHero/HomeHero';
 import Loader from '../Shared/Loader';
 
-const Home = ({loadedHomePosts, loadedHome}) => {
+const Home = ({loadedHome}) => {
 
-    if(loadedHomePosts && loadedHome) {
+    if(loadedHome) {
         return (
             <React.Fragment>
                 <HomeHero/>
-                <HomePost/>
             </React.Fragment>
             );
     } else {
