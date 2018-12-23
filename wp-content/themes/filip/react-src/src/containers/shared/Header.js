@@ -39,7 +39,7 @@ class Header extends React.Component {
             <React.Fragment>
                 <nav className="primary darken-1 animated slideInDown">
                     <div className="nav-wrapper container">
-                        <Link to="/" className="brand-logo animated fadeInDown slow">
+                        <Link to="/" className="brand-logo">
                             FilipS.okołowski
                         </Link>
                         <a href="#" data-target="mobile-burger" className="sidenav-trigger"><i

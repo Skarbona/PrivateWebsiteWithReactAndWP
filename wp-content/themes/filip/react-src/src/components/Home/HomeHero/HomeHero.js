@@ -5,7 +5,7 @@ import ReactHtmlParser from "react-html-parser";
 
 const HomeHero = ({ home }) => {
     const transformHTML = (node,index) => {
-        if(node.attribs && node.attribs['data-info-link']) {
+        if(node.attribs && node.attribs['data-info-text']) {
             return (
                 <Link key={`hero-${index}`}
                       to={node.attribs['data-info-link']}

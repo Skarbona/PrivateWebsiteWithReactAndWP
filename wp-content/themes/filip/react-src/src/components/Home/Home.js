@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
-import HomePost from './HomePosts/HomePosts';
 import HomeHero from './HomeHero/HomeHero';
 import Loader from '../Shared/Loader';
+import ToolsAndTech from '../ToolTech/ToolsAndTech'
+import PortfolioHome from '../Portfolio/PortfolioHome'
 
 const Home = ({loadedHome}) => {
 
@@ -12,6 +12,8 @@ const Home = ({loadedHome}) => {
         return (
             <React.Fragment>
                 <HomeHero/>
+                <ToolsAndTech />
+                <PortfolioHome />
             </React.Fragment>
             );
     } else {

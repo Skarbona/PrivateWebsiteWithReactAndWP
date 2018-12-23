@@ -1,0 +1,15 @@
+.section__tools-and-tech {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: url("/wp-content/uploads/2018/12/tlo-1.png");
+  img {
+    max-width:300px;
+    width:100%;
+  }
+}

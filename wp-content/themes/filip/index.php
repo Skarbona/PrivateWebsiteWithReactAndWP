@@ -46,7 +46,7 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
     -->
 
     <?php get_footer() ?>
-    <script src="/wp-content/themes/filip/static/js/bundle.js"></script><script src="/wp-content/themes/filip/static/js/0.chunk.js"></script><script src="/wp-content/themes/filip/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
+    <script src="/wp-content/themes/filip/static/js/bundle.js"></script><script src="/wp-content/themes/filip/static/js/1.chunk.js"></script><script src="/wp-content/themes/filip/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-utils/wpThemeClient.js'></script>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-error-overlay/wpThemeErrorOverlay.js'></script>
 

@@ -12,6 +12,7 @@ add_action( 'init', 'fs_custom_home_posts', 20);
 include( get_stylesheet_directory() . '/includes/init/portfolio.php' );
 add_action( 'init', 'fs_custom_portfolio', 20);
 add_action( 'init', 'fs_create_portfolio_taxonomies',apply_filters('fs_create_portfolio_taxonomies', 1));
+add_action( 'init', 'fs_create_portfolio_tags',apply_filters('fs_create_portfolio_tags', 1));
 
 include( get_stylesheet_directory() . '/includes/init/galleries.php' );
 add_action( 'init', 'fs_custom_gallery', 20);
@@ -61,8 +62,5 @@ function cta_shortcode($atts = [], $content = null, $tag = '') {
     return $content;
 }
 add_shortcode('cta_button', 'cta_shortcode');
-
-
-
 
 ?>

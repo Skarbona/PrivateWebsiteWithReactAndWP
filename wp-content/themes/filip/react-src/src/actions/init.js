@@ -8,6 +8,17 @@ import {
     FETCH_INIT_GALLERY_DATA,
 } from "./index";
 
+export const fetchAllInitData = () => dispatch => {
+    dispatch(fetchInitMenuData());
+    dispatch(fetchInitHomeData());
+    dispatch(fetchInitHomeElementsData());
+    dispatch(fetchInitToolsAndTechData());
+    dispatch(fetchInitPortfolioData());
+    dispatch(fetchInitPortfolioData());
+    dispatch(fetchInitGalleryData());
+};
+
+
 export const fetchInitMenuData = () => async dispatch => {
     try {
         const menu = await axios.get('/wp-json/primary/menu');
@@ -61,7 +72,7 @@ export const fetchInitToolsAndTechData = () => async dispatch => {
 
 export const fetchInitPortfolioData = () => async dispatch => {
     try {
-        const portfolio = await axios.get('/wp-json/wp/v2/portfolio');
+        const portfolio = await axios.get('/wp-json/wp/v2/portfolio?_embed');
         dispatch({
             type: FETCH_INIT_PORTFOLIO_DATA,
             payload: portfolio.data

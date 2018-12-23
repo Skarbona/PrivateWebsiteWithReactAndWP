@@ -2,14 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {
-    fetchInitMenuData,
-    fetchInitHomeData,
-    fetchInitHomeElementsData,
-    fetchInitToolsAndTechData,
-    fetchInitPortfolioData,
-    fetchInitGalleryData,
-} from './actions/init'
+import { fetchAllInitData } from './actions/init'
 
 import Header from './containers/shared/Header';
 import Home from './components/Home/Home'
@@ -18,20 +11,8 @@ import Bullitt from './components/Home/HomePosts/HomePosts'
 class App extends React.Component {
 
   componentDidMount = () => {
-      const { props: {
-          fetchInitMenuData,
-          fetchInitHomeData,
-          fetchInitHomeElementsData,
-          fetchInitToolsAndTechData,
-          fetchInitPortfolioData,
-          fetchInitGalleryData,
-      } } = this;
-      fetchInitMenuData();
-      fetchInitHomeData();
-      fetchInitHomeElementsData();
-      fetchInitToolsAndTechData();
-      fetchInitPortfolioData();
-      fetchInitGalleryData();
+      const { props: { fetchAllInitData } } = this;
+      fetchAllInitData();
   };
 
   render() {
@@ -41,7 +22,7 @@ class App extends React.Component {
               <Header/>
                 <Switch>
                     <Route exact path="/"  component={Home} />
-                    <Route exact path="/bullitt" component={Bullitt} />
+                    <Route exact path="/bullitt" component={() => <Bullitt typeOfPage="bullitt" />} />
                     <Redirect to="/" />
                 </Switch>
           </React.Fragment>
@@ -51,10 +32,5 @@ class App extends React.Component {
 }
 
 export default connect(null, {
-    fetchInitMenuData,
-    fetchInitHomeData,
-    fetchInitHomeElementsData,
-    fetchInitToolsAndTechData,
-    fetchInitPortfolioData,
-    fetchInitGalleryData
+    fetchAllInitData
 })(App);

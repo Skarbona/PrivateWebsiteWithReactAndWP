@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import HomePost from './HomePost'
 
-const HomePosts = ({homePosts}) => {
+const HomePosts = ({homePosts, typeOfPage}) => {
     if(!homePosts) return null;
+    let elementFilter = homePosts.filter(el => el.acf.page_name === typeOfPage);
 
     return (
         <React.Fragment>
-            {homePosts.map((post,index) =>{
+            {elementFilter.map((post,index) =>{
                 return <HomePost
                     key={index}
                     post={post}
