@@ -1,30 +1,54 @@
 import React from 'react';
 import './App.scss';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchAllInitData } from './actions/init'
 
 import Header from './containers/shared/Header';
+import Home from './components/Home/Home'
+import Bullitt from './components/Home/HomePosts/HomePosts'
 
 class App extends React.Component {
+
+  constructor(props) {
+     super(props);
+      this.contact = React.createRef();
+      this.home = React.createRef();
+      this.tools = React.createRef();
+      this.gallery = React.createRef();
+      this.portfolio = React.createRef();
+  }
+
+  componentDidMount = () => {
+      const { props: { fetchAllInitData } } = this;
+      fetchAllInitData();
+  };
+
   render() {
+      const { home, tools, portfolio, gallery, contact } = this;
     return (
-      <React.Fragment>
-        <Header/>
-          <div className="section no-pad-bot" id="index-banner">
-              <div className="container">
-                      <h1 className="header center orange-text">Starter Template</h1>
-                      <div className="row center">
-                          <h5 className="header col s12 light">A modern responsive front-end framework based on Material
-                              Design</h5>
-                      </div>
-                      <div className="row center">
-                          <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light orange">Get Started</a>
-                      </div>
-
-              </div>
-          </div>
-
-      </React.Fragment>
+      <BrowserRouter>
+          <React.Fragment>
+              <Header refHome={home}
+                      refTools={tools}
+                      refPortfolio={portfolio}
+                      refGallery={gallery}
+                      refContact={contact} />
+                <Switch>
+                    <Route exact path="/"  component={() => { return <Home refHome={home}
+                                                                           refTools={tools}
+                                                                           refPortfolio={portfolio}
+                                                                           refGallery={gallery}
+                                                                           refContact={contact} /> } } />
+                    <Route exact path="/bullitt" component={() => <Bullitt typeOfPage="bullitt" />} />
+                    <Redirect to="/" />
+                </Switch>
+          </React.Fragment>
+      </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default connect(null, {
+    fetchAllInitData
+})(App);

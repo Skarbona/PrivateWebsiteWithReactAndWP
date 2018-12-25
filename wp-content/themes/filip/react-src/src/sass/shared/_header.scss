@@ -1,0 +1,16 @@
+nav {
+  .brand-logo {
+    letter-spacing:3px;
+    font-weight:300;
+    @media #{$small-and-down} {
+      font-size:1.5em;
+    }
+  }
+  .sidenav-trigger {
+    cursor: pointer;
+  }
+}
+
+.sidenav {
+  clip-path: polygon(0px 0px, 100% 0%, 0% 100%, 0% 100%)
+}

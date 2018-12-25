@@ -1,0 +1,49 @@
+.section__hero {
+  min-height:calc(100vh - 100px);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  text-align:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
+  .container {
+    background-color: color("primary", "darken-1");
+    color: #fff;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    opacity: 1;
+    width: auto!important;
+    h1,h2 {
+      text-transform: uppercase;
+      letter-spacing: 1em;
+      text-indent: 1em;
+      text-align:center;
+      @media #{$small-and-down} {
+        letter-spacing: 0.5em;
+        text-indent: 0.5em;
+      }
+    }
+    h1 {
+      font-size:4em;
+      @media #{$small-and-down} {
+        font-size:2.65em;
+
+      }
+
+
+    }
+    h2 {
+      font-size:7.7em;
+      @media #{$small-and-down} {
+        font-size:5em;
+      }
+    }
+  }
+}
+
