@@ -5,12 +5,12 @@ import { setCurrentPortfolioItems } from '../../actions/portfolio'
 
 const PortfolioTaxonomiesItem = ({ taxItem, current, setCurrentPortfolioItems }) => {
     return (
-        <a className={`btn waves-effect ${taxItem.classes}`}
+        <button className={`btn waves-effect ${taxItem.classes}`}
            disabled={current === taxItem.name}
            onClick={() => setCurrentPortfolioItems(taxItem.name)}
         >
             {taxItem.name}
-        </a>
+        </button>
     );
 };
 

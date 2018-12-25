@@ -4,9 +4,10 @@ const PorfolioListItemTags = ({ tags }) => {
     return (
         <React.Fragment>
             {tags.map(tag => (
-                <a className="btn-small" disabled href="/">
+                <button key={`item-tags-${tag.name}`}
+                        className={`btn-small ${tag.acf.class_names}`}>
                         {tag.name}
-                </a>
+                </button>
             ))}
         </React.Fragment>
     );

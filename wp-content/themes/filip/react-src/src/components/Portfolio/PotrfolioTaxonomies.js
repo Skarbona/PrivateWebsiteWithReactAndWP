@@ -7,11 +7,11 @@ import PortfolioTaxonomiesItem from './PortfolioTaxonomiesItem'
 const PortfolioTaxonomies = ({ catList, current, setCurrentPortfolioItems }) => {
     return (
         <React.Fragment>
-            <a className="btn grey waves-effect"
+            <button className="btn grey waves-effect"
                disabled={current === 'all'}
                onClick={() => setCurrentPortfolioItems('all')}>
                 All Items
-            </a>
+            </button>
             {catList.map(taxItem => <PortfolioTaxonomiesItem
                 key={taxItem.name}
                 taxItem={taxItem} />)}

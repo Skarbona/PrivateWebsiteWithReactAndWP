@@ -47,7 +47,7 @@ export const fetchInitHomeData = () => async dispatch => {
 
 export const fetchInitHomeElementsData = () => async dispatch => {
     try {
-        const homeElements = await axios.get('/wp-json/wp/v2/home_posts');
+        const homeElements = await axios.get('/wp-json/wp/v2/home_posts?per_page=100&_embed');
         dispatch({
             type: FETCH_INIT_HOME_ELEMENTS_DATA,
             payload: homeElements.data
@@ -60,7 +60,7 @@ export const fetchInitHomeElementsData = () => async dispatch => {
 
 export const fetchInitToolsAndTechData = () => async dispatch => {
     try {
-        const toolsAndTech = await axios.get('/wp-json/wp/v2/tools_tech');
+        const toolsAndTech = await axios.get('/wp-json/wp/v2/tools_tech?per_page=100');
         dispatch({
             type: FETCH_INIT_TOOLS_AND_TECH_DATA,
             payload: toolsAndTech.data
@@ -72,7 +72,7 @@ export const fetchInitToolsAndTechData = () => async dispatch => {
 
 export const fetchInitPortfolioData = () => async dispatch => {
     try {
-        const portfolio = await axios.get('/wp-json/wp/v2/portfolio?_embed');
+        const portfolio = await axios.get('/wp-json/wp/v2/portfolio?per_page=100&_embed');
         dispatch({
             type: FETCH_INIT_PORTFOLIO_DATA,
             payload: portfolio.data
@@ -84,7 +84,7 @@ export const fetchInitPortfolioData = () => async dispatch => {
 
 export const fetchInitGalleryData = () => async dispatch => {
     try {
-        const gallery = await axios.get('/wp-json/wp/v2/gallery');
+        const gallery = await axios.get('/wp-json/wp/v2/gallery?per_page=100&_embed');
         dispatch({
             type: FETCH_INIT_GALLERY_DATA,
             payload: gallery.data

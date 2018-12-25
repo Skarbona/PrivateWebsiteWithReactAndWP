@@ -37,18 +37,20 @@ class Header extends React.Component {
         const { sideNav, menuMapHandler } = this;
         return (
             <React.Fragment>
-                <nav className="primary darken-1 animated slideInDown">
-                    <div className="nav-wrapper container">
-                        <Link to="/" className="brand-logo">
-                            FilipS.okołowski
-                        </Link>
-                        <a href="#" data-target="mobile-burger" className="sidenav-trigger"><i
-                            className="material-icons">menu</i></a>
-                        <ul className="right hide-on-med-and-down">
-                            {menuMapHandler()}
-                        </ul>
-                    </div>
-                </nav>
+                <div className="navbar-fixed">
+                    <nav className="primary darken-1 animated slideInDown">
+                        <div className="nav-wrapper container">
+                            <Link to="/" className="brand-logo">
+                                FilipS.okołowski
+                            </Link>
+                            <a data-target="mobile-burger" className="sidenav-trigger"><i
+                                className="material-icons">menu</i></a>
+                            <ul className="right hide-on-med-and-down">
+                                { menuMapHandler() }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
 
                 <ul className="sidenav" id="mobile-burger" ref={sideNav}>
                     {menuMapHandler()}

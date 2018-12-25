@@ -3,7 +3,7 @@ import {
 } from "../actions";
 
 const initialState = {
-    current: 'all'
+    current: 'React'
 };
 
 export default (state = initialState, action) => {

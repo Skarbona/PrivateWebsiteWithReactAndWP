@@ -6,23 +6,8 @@ import PortfolioList from './PortfolioList'
 import PortfolioTaxonomies from './PotrfolioTaxonomies'
 
 import compareNumbers from '../../functions/compareNumbers'
+import returnTaxonomiesList from '../../functions/returnTaxonomiesList'
 
-const returnTaxonomiesList = (portfolio,list) => {
-    let helperArray = [];
-    portfolio.map((item) => {
-        let taxSingleArray = item._embedded["wp:term"][list].map(single => {
-            return {
-                'name': single.name,
-                'classes': single.acf.class_names || '',
-                'menu_order': single.acf.menu_order
-            };
-        });
-        helperArray.push(...taxSingleArray)
-    });
-    return helperArray.reduce((obj, x) => {
-            return obj.concat(obj.find(y => y.name === x.name) ? [] : [x])
-    }, []);
-};
 
 const PortfolioHome = ({ portfolio }) => {
 
@@ -50,7 +35,7 @@ const PortfolioHome = ({ portfolio }) => {
 
 const mapStateToProps = state => {
     return {
-            portfolio : state.init.portfolio.sort(compareNumbers)
+            portfolio : state.init.portfolio ? state.init.portfolio.sort(compareNumbers) : null,
         }
  };
 

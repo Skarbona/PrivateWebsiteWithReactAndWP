@@ -5,6 +5,8 @@ import HomeHero from './HomeHero/HomeHero';
 import Loader from '../Shared/Loader';
 import ToolsAndTech from '../ToolTech/ToolsAndTech'
 import PortfolioHome from '../Portfolio/PortfolioHome'
+import GalleryHome from '../Gallery/GalleryHome'
+import ContactHome from '../Contact/ContactHome'
 
 const Home = ({loadedHome}) => {
 
@@ -14,6 +16,8 @@ const Home = ({loadedHome}) => {
                 <HomeHero/>
                 <ToolsAndTech />
                 <PortfolioHome />
+                <GalleryHome />
+                <ContactHome />
             </React.Fragment>
             );
     } else {
