@@ -42,7 +42,7 @@ const ToolsAndTech = ({tt}) => {
 
 const mapStateToProps = state => {
     return {
-            tt : state.init.toolsAndTech.sort(compareNumbers)
+            tt : state.init.toolsAndTech ? state.init.toolsAndTech.sort(compareNumbers) : null
         }
  };
 
