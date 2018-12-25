@@ -10,18 +10,36 @@ import Bullitt from './components/Home/HomePosts/HomePosts'
 
 class App extends React.Component {
 
+  constructor(props) {
+     super(props);
+      this.contact = React.createRef();
+      this.home = React.createRef();
+      this.tools = React.createRef();
+      this.gallery = React.createRef();
+      this.portfolio = React.createRef();
+  }
+
   componentDidMount = () => {
       const { props: { fetchAllInitData } } = this;
       fetchAllInitData();
   };
 
   render() {
+      const { home, tools, portfolio, gallery, contact } = this;
     return (
       <BrowserRouter>
           <React.Fragment>
-              <Header/>
+              <Header refHome={home}
+                      refTools={tools}
+                      refPortfolio={portfolio}
+                      refGallery={gallery}
+                      refContact={contact} />
                 <Switch>
-                    <Route exact path="/"  component={Home} />
+                    <Route exact path="/"  component={() => { return <Home refHome={home}
+                                                                           refTools={tools}
+                                                                           refPortfolio={portfolio}
+                                                                           refGallery={gallery}
+                                                                           refContact={contact} /> } } />
                     <Route exact path="/bullitt" component={() => <Bullitt typeOfPage="bullitt" />} />
                     <Redirect to="/" />
                 </Switch>

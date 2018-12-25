@@ -1,14 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import GalleryHeader from '../Home/HomePosts/HomePosts'
+import GalleryList from './GalleryList'
 
-import compareNumbers from '../../functions/compareNumbers'
-
-const GalleryHome = ({ gallery }) => {
-
-    if(!gallery) return null;
-
+const GalleryHome = () => {
 
     return (
         <React.Fragment>
@@ -17,7 +12,7 @@ const GalleryHome = ({ gallery }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 center-align">
-                                GalleryList
+                               <GalleryList />
                         </div>
                     </div>
                 </div>
@@ -26,11 +21,5 @@ const GalleryHome = ({ gallery }) => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        gallery : state.init.gallery ? state.init.gallery.sort(compareNumbers) : null,
-    }
-};
 
-
-export default connect(mapStateToProps)(GalleryHome);
+export default GalleryHome;

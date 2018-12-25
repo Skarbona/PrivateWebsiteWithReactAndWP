@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ContactHeader from '../Home/HomePosts/HomePosts'
-import ContactInfo from './ContactInfo'
+import ContactInfo from '../../containers/Contact/ContactInfo'
 
 const ContactHome = () => {
 

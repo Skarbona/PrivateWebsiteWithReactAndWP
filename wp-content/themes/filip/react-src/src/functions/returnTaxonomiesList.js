@@ -1,7 +1,7 @@
 export default (portfolio,list) => {
     let helperArray = [];
-    portfolio.map((item) => {
-        item._embedded["wp:term"][list].map(single => {
+    portfolio.forEach((item) => {
+        item._embedded["wp:term"][list].forEach(single => {
             helperArray.push({
                 'name': single.name,
                 'classes': single.acf.class_names || '',

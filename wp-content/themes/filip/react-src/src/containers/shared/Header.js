@@ -17,17 +17,30 @@ class Header extends React.Component {
         const elems = sideNav.current;
         M.Sidenav.init(elems);
 
+
     };
 
     menuMapHandler = () => {
-        const { props: { menu } } = this;
+        const { props: { menu, refHome, refTools, refPortfolio, refGallery, refContact } } = this;
         if (!menu) return;
 
         return menu.map((menuItem)=>{
+            let ref = null;
+            switch(menuItem.post_excerpt) {
+                case 'home' : ref = refHome ; break;
+                case 'tools' : ref = refTools ; break;
+                case 'portfolio' : ref = refPortfolio ; break;
+                case 'gallery' : ref = refGallery ; break;
+                case 'contact' : ref = refContact ; break;
+                default : ref = refHome;
+            }
             return (
                 <li key={`menuID-${menuItem.ID}`}
-                    className="animated fadeInDown slow">
-                    <Link to={menuItem.url}>{menuItem.post_title}</Link>
+                    ref={ref}
+                    className="animated fadeInDown slow"
+                    onClick={()=>{ ref.current.scrollIntoView({block: "start", behavior: 'smooth'});  }}
+                >
+                    <Link to="/"> {menuItem.post_title} </Link>
                 </li>
             );
         })
@@ -43,8 +56,8 @@ class Header extends React.Component {
                             <Link to="/" className="brand-logo">
                                 FilipS.okołowski
                             </Link>
-                            <a data-target="mobile-burger" className="sidenav-trigger"><i
-                                className="material-icons">menu</i></a>
+                            <Link to="#" data-target="mobile-burger" className="sidenav-trigger"><i
+                                className="material-icons">menu</i></Link>
                             <ul className="right hide-on-med-and-down">
                                 { menuMapHandler() }
                             </ul>

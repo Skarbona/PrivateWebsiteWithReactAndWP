@@ -19,7 +19,7 @@ const PortfolioHome = ({ portfolio }) => {
     return (
         <React.Fragment>
             <PortfolioHeader typeOfPage="portfolio" />
-            <div className="section section__portfolio">
+            <div className="section section__portfolio" >
                 <div className="container">
                     <div className="row">
                         <div className="col s12 center-align">

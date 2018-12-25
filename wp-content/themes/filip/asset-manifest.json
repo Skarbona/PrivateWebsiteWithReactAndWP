@@ -1,9 +1,15 @@
 {
-  "main.js": "/wp-content/themes/filip/static/js/main.chunk.js",
-  "main.js.map": "/wp-content/themes/filip/static/js/main.chunk.js.map",
-  "static/js/0.chunk.js": "/wp-content/themes/filip/static/js/0.chunk.js",
-  "static/js/0.chunk.js.map": "/wp-content/themes/filip/static/js/0.chunk.js.map",
-  "runtime~main.js": "/wp-content/themes/filip/static/js/bundle.js",
-  "runtime~main.js.map": "/wp-content/themes/filip/static/js/bundle.js.map",
-  "index.php": "/wp-content/themes/filip/index.php"
+  "main.css": "/wp-content/themes/filip/static/css/main.439f9f3a.chunk.css",
+  "main.js": "/wp-content/themes/filip/static/js/main.e8f277ff.chunk.js",
+  "main.js.map": "/wp-content/themes/filip/static/js/main.e8f277ff.chunk.js.map",
+  "static/css/1.4801f8ce.chunk.css": "/wp-content/themes/filip/static/css/1.4801f8ce.chunk.css",
+  "static/js/1.45cb2224.chunk.js": "/wp-content/themes/filip/static/js/1.45cb2224.chunk.js",
+  "static/js/1.45cb2224.chunk.js.map": "/wp-content/themes/filip/static/js/1.45cb2224.chunk.js.map",
+  "runtime~main.js": "/wp-content/themes/filip/static/js/runtime~main.1f8bc4e2.js",
+  "runtime~main.js.map": "/wp-content/themes/filip/static/js/runtime~main.1f8bc4e2.js.map",
+  "static/css/1.4801f8ce.chunk.css.map": "/wp-content/themes/filip/static/css/1.4801f8ce.chunk.css.map",
+  "static/css/main.439f9f3a.chunk.css.map": "/wp-content/themes/filip/static/css/main.439f9f3a.chunk.css.map",
+  "index.php": "/wp-content/themes/filip/index.php",
+  "precache-manifest.f5021a858df0ca510f85a3f3ef7492ad.js": "/wp-content/themes/filip/precache-manifest.f5021a858df0ca510f85a3f3ef7492ad.js",
+  "service-worker.js": "/wp-content/themes/filip/service-worker.js"
 }

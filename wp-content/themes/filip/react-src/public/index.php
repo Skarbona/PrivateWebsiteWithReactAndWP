@@ -33,6 +33,7 @@ $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
+    <div id="modal"></div>
     <div id="root"></div>
     <!--
         This PHP file is a template.

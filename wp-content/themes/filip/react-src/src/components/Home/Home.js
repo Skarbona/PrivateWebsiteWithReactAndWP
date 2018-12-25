@@ -8,16 +8,25 @@ import PortfolioHome from '../Portfolio/PortfolioHome'
 import GalleryHome from '../Gallery/GalleryHome'
 import ContactHome from '../Contact/ContactHome'
 
-const Home = ({loadedHome}) => {
-
+const Home = ({loadedHome, refHome, refTools, refPortfolio, refGallery, refContact }) => {
     if(loadedHome) {
         return (
             <React.Fragment>
-                <HomeHero/>
-                <ToolsAndTech />
-                <PortfolioHome />
-                <GalleryHome />
-                <ContactHome />
+                <div ref={refHome}>
+                    <HomeHero />
+                </div>
+                <div ref={refTools}>
+                    <ToolsAndTech />
+                </div>
+                <div ref={refPortfolio}>
+                    <PortfolioHome />
+                </div>
+                <div ref={refGallery}>
+                    <GalleryHome />
+                </div>
+                <div ref={refContact}>
+                    <ContactHome />
+                </div>
             </React.Fragment>
             );
     } else {

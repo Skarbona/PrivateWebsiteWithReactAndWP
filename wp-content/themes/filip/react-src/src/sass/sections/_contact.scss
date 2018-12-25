@@ -4,7 +4,9 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-
+    @media #{$small-and-down} {
+      min-height: 100vw;
+    }
   }
 
   .layer {
@@ -12,10 +14,16 @@
     width: 100vw;
     min-height: 55vw;
     overflow: hidden;
+    @media #{$small-and-down} {
+      min-height: 100vw;
+    }
     .content-wrap {
       position: absolute;
       width: 100vw;
       min-height: 55vw;
+      @media #{$small-and-down} {
+        min-height: 100vw;
+      }
     }
     .content-body {
       width: 35%;
@@ -33,10 +41,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      //clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
       clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
       @media #{$small-and-down} {
-        display:none;
+        top:20%;
       }
     }
     h1 {
