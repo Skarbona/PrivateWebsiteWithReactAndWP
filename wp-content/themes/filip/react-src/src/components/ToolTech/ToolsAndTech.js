@@ -15,28 +15,30 @@ const ToolsAndTech = ({tt}) => {
     if(!tt) return null;
 
     return (
-        <div className="section section__tools-and-tech">
-            <div className="container">
-                <div className="row">
-                    <div className="col s12 center-align">
-                        <TechElements typeOfPage="tech" />
+        <React.Fragment>
+            <TechElements typeOfPage="tech" />
+            <div className="section section__tools-and-tech">
+                <div className="container">
+                    <div className="row">
+                        <div className="col s12 center-align">
+                        </div>
+                            { tt.map((t,index) => {
+                              return (
+                                      <div className="col l4 m6 s6 center-align"
+                                           key={`tt-${t.id}`}>
+                                          <ScrollAnimation animateIn="fadeIn" delay={delayFunction(index)}>
+                                            <img
+                                                src={t.acf.feature_image}
+                                                alt={t.title.rendered.replace('&#038;', '&')}
+                                            />
+                                          </ScrollAnimation>
+                                      </div>
+                              );
+                            })}
                     </div>
-                        { tt.map((t,index) => {
-                          return (
-                                  <div className="col l4 m6 s12 center-align"
-                                       key={`tt-${t.id}`}>
-                                      <ScrollAnimation animateIn="fadeIn" delay={delayFunction(index)}>
-                                        <img
-                                            src={t.acf.feature_image}
-                                            alt={t.title.rendered.replace('&#038;', '&')}
-                                        />
-                                      </ScrollAnimation>
-                                  </div>
-                          );
-                        })}
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 };
 

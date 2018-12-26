@@ -16,6 +16,7 @@
     transition: all 0.5s;
     background-color:transparent;
     box-shadow:none;
+    overflow: hidden;
     &.open {
       transition: all 0.5s;
       opacity: 1;

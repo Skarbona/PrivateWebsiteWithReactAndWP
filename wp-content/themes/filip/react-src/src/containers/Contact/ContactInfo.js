@@ -29,6 +29,19 @@ class ContactInfo extends React.Component {
         topLayer.current.style.width = x + skew + delta + 'px';
     };
 
+    wrapperOnMouseMobile = e => {
+        let { topLayer, handle } = this;
+        const { delta, skew, x } = this.state;
+
+        this.setState({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+
+        this.setState({
+            delta: (x - window.innerWidth / 2) * 0.5
+        });
+        handle.current.style.left = x + delta + 'px';
+        topLayer.current.style.width = x + skew + delta + 'px';
+    };
+
     componentDidMount = () => {
         const { wrapper  } = this;
 
@@ -39,16 +52,16 @@ class ContactInfo extends React.Component {
     };
 
     render(){
-        const { wrapper, topLayer, handle, wrapperOnMouseMove } = this;
+        const { wrapper, topLayer, handle, wrapperOnMouseMove, wrapperOnMouseMobile } = this;
         return (
             <React.Fragment>
                 <section id="wrapper"
                          className="skewed"
                          onMouseMove={wrapperOnMouseMove}
-                         onTouchMove={wrapperOnMouseMove}
-                         onTouchStart={wrapperOnMouseMove}
-                         onTouchEnd={wrapperOnMouseMove}
-                         onTouchCancel={wrapperOnMouseMove}
+                         onTouchMove={wrapperOnMouseMobile}
+                         onTouchStart={wrapperOnMouseMobile}
+                         onTouchEnd={wrapperOnMouseMobile}
+                         onTouchCancel={wrapperOnMouseMobile}
                          ref={wrapper}>
                     <div className="layer bottom grey darken-3">
                         <div className="content-wrap">
