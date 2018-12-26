@@ -9,7 +9,7 @@ class GalleryListItem extends React.Component {
     state = {
         modalOpened: false,
         openClass: '',
-        style: { display: 'none' }
+        style: { display: 'none' },
     };
 
     openModalHandler = () => {
@@ -38,7 +38,10 @@ class GalleryListItem extends React.Component {
             <React.Fragment>
                 <div className="col s12 m6 l6 xl4 animated fadeIn">
                     <div className="card">
-                        <div className="card-image" style={{
+                        <div className="card-image"
+                             onClick={openModalHandler}
+                             style={{
+                            cursor: 'pointer',
                             backgroundImage: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)), url(${image})`
                         }}>
                             <span className="card-title"> {single.title.rendered}</span>
