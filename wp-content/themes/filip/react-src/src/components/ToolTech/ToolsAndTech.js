@@ -6,10 +6,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import compareNumbers from '../../functions/compareNumbers'
 import TechElements from '../Home/HomePosts/HomePosts';
 
-const delayFunction = (index) => {
-    let delay = index % 3;
-    return delay * 300;
-};
+const delayFunction = index => (index % 3) * 300;
 
 const ToolsAndTech = ({tt}) => {
     if(!tt) return null;
